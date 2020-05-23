@@ -4,8 +4,17 @@ const todoForm = document.querySelector(".todo_form"),
 
 const TODOS_LS = localStorage.getItem('todos');
 
+const todos = [];
+
+function saveTodos(todos) {
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
+
 function paintTodos(text) {
-    const ul = document.createElement('li');
+    const li = document.createElement('li');
+    const newId = todos.length + 1;
+    li.setAttribute('id', newId);
+
     const i = document.createElement('i');
     i.classList.add('fas');
     i.classList.add('fa-check');
@@ -15,25 +24,37 @@ function paintTodos(text) {
     removeBtn.classList.add('removeBtn');
     removeBtn.innerHTML = "&times;";
 
-    ul.appendChild(i);
-    ul.appendChild(span);
-    ul.appendChild(removeBtn);
+    li.appendChild(i);
+    li.appendChild(span);
+    li.appendChild(removeBtn);
+    todoItems.appendChild(li);
 
-    todoItems.appendChild(ul);
+    const todo_Obj = {
+        text: text,
+        id: newId
+    };
+    
+    todos.push(todo_Obj);
+    saveTodos(todos);
 }
 
 function handleSubmit(e) {
     e.preventDefault();
     const currentInput = todoInput.value;
-    console.log(todoInput.value);
     todoInput.value = "";
     paintTodos(currentInput);
 }
 
 function loadTodos() {
-    if (TODOS_LS === null) {}
-    else {
-        paintTodos();
+    const loaded_todos = localStorage.getItem('todos');
+    if (TODOS_LS !== null) {
+        const parsed = JSON.parse(loaded_todos);
+        parsed.map(todo => {
+            todos.push(todo);
+        });
+        todos.map(todo => {
+            paintTodos(todo.text);
+        });
     }
 }
 
