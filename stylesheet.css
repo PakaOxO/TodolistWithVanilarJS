@@ -35,7 +35,7 @@ body {
     color: white;
 }
 
-.todo_header .header_addList {
+.todo_header .todo_form {
     width: 100%;
     height: 40px;
     border-bottom: 1px solid var(--point-color);
@@ -44,7 +44,7 @@ body {
     padding: 0.6rem 0;
 }
 
-.todo_header .header_addList input {
+.todo_header .todo_form input {
     height: auto;
     width: 60%;
     line-height: normal;
@@ -56,15 +56,15 @@ body {
     outline-style: none;
 }
 
-.todo_header .header_addList input:focus {
+.todo_header .todo_form input:focus {
     border: 1px solid var(--skyBlue);
 }
 
-.todo_header .header_addList input::placeholder {
+.todo_header .todo_form input::placeholder {
     padding-left: 0.6rem;
 }
 
-.todo_header .header_addList .addBtn {
+.todo_header .todo_form .addBtn {
     width: 20%;
     margin-right: 0.4rem;
     border-radius: 4px;
