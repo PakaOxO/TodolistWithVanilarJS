@@ -1,0 +1,172 @@
+:root {
+    --backgroundColor : #f0f0f0;
+    --point-color: #176171;
+    --skyBlue: #aeeeee;
+}
+
+body {
+    font-family: snas-serif;
+    background-color: var(--backgroundColor);
+    display: flex;
+    justify-content: space-around;
+}
+
+.todo_container,
+.checked_container {
+    width: 400px;
+    background-color: white;
+}
+
+.todo_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo_header .header_title {
+    width: 100%;
+    height: 60px;
+    background-color: var(--point-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: white;
+}
+
+.todo_header .header_addList {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid var(--point-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 0.6rem 0;
+}
+
+.todo_header .header_addList input {
+    height: auto;
+    width: 60%;
+    line-height: normal;
+    padding: .8rem .4rem;
+    margin-left: 0.6rem;
+    border: none;
+    border-bottom: 1px solid var(--point-color);
+    background-color: none;
+    outline-style: none;
+}
+
+.todo_header .header_addList input:focus {
+    border: 1px solid var(--skyBlue);
+}
+
+.todo_header .header_addList input::placeholder {
+    padding-left: 0.6rem;
+}
+
+.todo_header .header_addList .addBtn {
+    width: 20%;
+    margin-right: 0.4rem;
+    border-radius: 4px;
+    background-color: var(--point-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addBtn > span {
+    color: white;
+    font-weight: 600;
+}
+
+.todo_list {
+    padding: 0;
+    width: 100%;
+    min-height: 400px;;
+}
+
+.todo_list .todo_items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo_list .todo_items li {
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    border-bottom: 1px dotted var(--point-color);
+}
+
+.todo_list .todo_items li:hover {
+    background-color: #d3f8fb;
+}
+
+.todo_list .todo_items li i {
+    margin-left: .6rem;
+    color: red;
+}
+
+.todo_list .todo_items li span {
+    margin-left: .6rem;
+    flex: 1;
+}
+
+.todo_list .todo_items li .removeBtn {
+    color: red;
+    font-weight: 600;
+    position: relative;
+    right: 1rem;
+}
+
+.checked_header .header_title {
+    width: 100%;
+    height: 60px;
+    background-color: var(--point-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: white;
+}
+
+.checked_list {
+    padding: 0;
+    width: 100%;
+    min-height: 400px;;
+}
+
+.checked_list .checked_items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checked_list .checked_items li {
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    border-bottom: 1px dotted var(--point-color);
+}
+
+.checked_list .checked_items li:hover {
+    background-color: #d3f8fb;
+}
+
+.checked_list .checked_items li i {
+    margin-left: .6rem;
+    color: red;
+}
+
+.checked_list .checked_items li span {
+    margin-left: .6rem;
+    flex: 1;
+}
+
+.checked_list .checked_items li .removeBtn {
+    color: red;
+    font-weight: 600;
+    position: relative;
+    right: 1rem;
+}

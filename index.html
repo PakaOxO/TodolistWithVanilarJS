@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/59b8a55281.js" crossorigin="anonymous"></script>
+    <link href="stylesheet.css" rel="stylesheet">
     <title>TodoList</title>
 </head>
 <body>
-    
+    <div class="todo_container">
+        <div class="todo_header">
+            <div class="header_title">Todo List App</div>
+            <div class="header_addList">
+                <input type="text" placeholder="Add todolist">
+                <div class="addBtn"><span>Add</span></div>
+            </div>
+        </div>
+        <div class="todo_list">
+            <ul class="todo_items">
+                <li>
+                    <i class="fas fa-check"></i>
+                    <span>오늘의 할일 리스트 1</span>
+                    <div class="removeBtn">&times;</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="checked_container">
+        <div class="checked_header">
+            <div class="header_title">Checked Todos</div>
+            <div class="checked_list">
+                <ul class="checked_items">
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <span>오늘의 한일 리스트 1</span>
+                        <div class="removeBtn">&times;</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
