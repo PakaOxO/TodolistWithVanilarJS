@@ -36,6 +36,19 @@ function paintTodos(text) {
 
     todos.push(todo_Obj);
     saveTodos(todos);
+
+    removeBtn.addEventListener("click", handleClick);
+}
+
+function handleClick(e) {
+    const target = e.target;
+    const target_li = target.parentNode;
+    const newTodos = todos.filter(todo => todo.id !== parseInt(target_li.id));
+    console.log(newTodos);
+
+    target_li.remove();
+    localStorage.clear();
+    saveTodos(newTodos);
 }
 
 function handleSubmit(e) {
@@ -54,6 +67,8 @@ function loadTodos() {
         });
     }
 }
+
+const remove = document.querySelector('.removeBtn');
 
 function init() {
     loadTodos();

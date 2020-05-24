@@ -98,8 +98,10 @@ body {
     border-bottom: 1px dotted var(--point-color);
 }
 
-.todo_list .todo_items li:hover {
+.todo_list .todo_items li:hover,
+.checked_list .checked_items li:hover {
     background-color: #d3f8fb;
+    cursor: pointer;
 }
 
 .todo_list .todo_items li i {
@@ -112,11 +114,16 @@ body {
     flex: 1;
 }
 
-.todo_list .todo_items li .removeBtn {
-    color: red;
+.removeBtn {
+    color: black;
     font-weight: 600;
     position: relative;
     right: 1rem;
+}
+
+.removeBtn:hover {
+    cursor: pointer;
+    color: red;
 }
 
 .checked_header .header_title {
@@ -162,11 +169,4 @@ body {
 .checked_list .checked_items li span {
     margin-left: .6rem;
     flex: 1;
-}
-
-.checked_list .checked_items li .removeBtn {
-    color: red;
-    font-weight: 600;
-    position: relative;
-    right: 1rem;
 }
