@@ -33,7 +33,7 @@ function paintTodos(text) {
         text: text,
         id: newId
     };
-    
+
     todos.push(todo_Obj);
     saveTodos(todos);
 }
@@ -50,9 +50,6 @@ function loadTodos() {
     if (TODOS_LS !== null) {
         const parsed = JSON.parse(loaded_todos);
         parsed.map(todo => {
-            todos.push(todo);
-        });
-        todos.map(todo => {
             paintTodos(todo.text);
         });
     }
