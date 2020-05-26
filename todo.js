@@ -6,8 +6,8 @@ const todoForm = document.querySelector(".todo_form"),
 const TODOS_LS = localStorage.getItem('todos');
 const CHECKED_LS = localStorage.getItem('checked');
 
-const todos = [];
-const checked = [];
+let todos = [];
+let checked = [];
 
 function saveTodos(todos) {
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -83,6 +83,7 @@ function handleRemove(e) {
     const target = e.target;
     const target_li = target.parentNode;
     const newTodos = todos.filter(todo => todo.id !== parseInt(target_li.id));
+    todos = newTodos;
 
     target_li.remove();
     localStorage.removeItem("todos");
@@ -93,7 +94,8 @@ function handleRemove2(e) {
     const target = e.target;
     const target_li = target.parentNode;
     const newChecked = checked.filter(item => item.id !== parseInt(target_li.id));
-
+    checked = newChecked;
+    
     target_li.remove();
     localStorage.removeItem("checked");
     saveChecked(newChecked);
