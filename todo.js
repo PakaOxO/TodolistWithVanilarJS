@@ -1,7 +1,8 @@
 const todoForm = document.querySelector(".todo_form"),
     todoInput = todoForm.querySelector(".todo_input"),
     todoItems = document.querySelector(".todo_items"),
-    checkedItems = document.querySelector(".checked_items");
+    checkedItems = document.querySelector(".checked_items"),
+    addBtn = document.querySelector(".addBtn");
 
 const TODOS_LS = localStorage.getItem('todos');
 const CHECKED_LS = localStorage.getItem('checked');
@@ -143,6 +144,7 @@ function init() {
     loadTodos();
     loadChecked();
     todoForm.addEventListener("submit", handleSubmit);
+    addBtn.addEventListener("click", handleSubmit);
 }
 
 init();
