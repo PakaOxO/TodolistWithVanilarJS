@@ -74,6 +74,11 @@ body {
     align-items: center;
 }
 
+.todo_header .todo_form .addBtn:hover {
+    cursor: pointer;
+    background-color: green;
+}
+
 .addBtn > span {
     color: white;
     font-weight: 600;
