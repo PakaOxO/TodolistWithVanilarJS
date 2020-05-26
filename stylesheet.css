@@ -175,3 +175,13 @@ body {
     margin-left: .6rem;
     flex: 1;
 }
+
+@media screen and (max-width: 1024px) {
+    body {
+        flex-direction: column;
+    }
+
+    .todo_container {
+        margin-bottom: 2rem;
+    }
+}
